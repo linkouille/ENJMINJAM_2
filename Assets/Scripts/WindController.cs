@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class WindController : MonoBehaviour
 {
-    private static WindController _currentWC = null;
-    static readonly object instanceLock = new object();
+    public static WindController current;
     public Vector3 currentWind;
 
-    // Start is called before the first frame update
     void Start()
     {
+        current = this;
         currentWind = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
     }
-
-    // Update is called once per frame
     void Update()
     {
         windEvolution();
@@ -23,22 +20,6 @@ public class WindController : MonoBehaviour
     private WindController()
     {
 
-    }
-
-    public static WindController getWindController
-    {
-        get
-        {
-            if (_currentWC == null)
-            {
-                lock (instanceLock)
-                {
-                    if (_currentWC == null)
-                        _currentWC = new WindController();
-                }
-            }
-            return _currentWC;
-        }
     }
 
     public Vector3 getCurrentWind()

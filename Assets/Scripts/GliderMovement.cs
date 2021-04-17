@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class GliderMovement : MonoBehaviour
 {
-    [SerializeField] private Vector2 boundAngleX;
 
     public Vector3 windDir;
+    public Vector3 dirToKiteProj;
+    public float angleWithWind;
 
-    private float distToGround;
-    private float distToCenter;
+    [SerializeField] private Vector2 boundAngleX;
 
     [SerializeField] private Transform kite;
 
     [SerializeField] private float speed;
     [SerializeField] private float maxHeight;
     [SerializeField] private float maxAngle;
-    [SerializeField] private float radius;
 
     private Vector3 rotation;
     private float acc;
@@ -24,7 +23,6 @@ public class GliderMovement : MonoBehaviour
     private void Awake()
     {
         kite = transform.GetChild(0);
-        radius = Vector3.Distance(kite.position, transform.position);
         rotation = transform.eulerAngles;
     }
 
@@ -34,12 +32,12 @@ public class GliderMovement : MonoBehaviour
 
         Vector3 dirToKite = kite.position - transform.position;
 
-        Vector3 dirToKiteProj = Vector3.ProjectOnPlane(dirToKite, Vector3.up).normalized;
+        dirToKiteProj = Vector3.ProjectOnPlane(dirToKite, Vector3.up).normalized;
 
         Debug.DrawRay(transform.position, dirToKiteProj, Color.red);
         Debug.DrawRay(transform.position, windDir, Color.green);
 
-        float angleWithWind = Vector3.Angle(dirToKiteProj, windDir);
+        angleWithWind = Vector3.Angle(dirToKiteProj, windDir);
 
         acc = Mathf.Clamp((maxAngle - angleWithWind)/maxAngle,0,1);
 
