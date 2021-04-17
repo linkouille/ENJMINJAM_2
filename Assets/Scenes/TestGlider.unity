@@ -203,12 +203,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324099281}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 6}
+  m_LocalRotation: {x: -0.009889944, y: -0, z: -0, w: 0.9999511}
+  m_LocalPosition: {x: 0, y: 0.11867353, z: 5.9988265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2062155735}
-  m_Father: {fileID: 1571494405}
+  m_Father: {fileID: 1405553896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527232049
@@ -303,7 +303,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1405553896}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -316,15 +317,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 527232049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64e85cdffdb4ce744af2754733ff8c29, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ffb2b05afad9fa4bb2af28602b83970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundAngleX: {x: 0, y: 0}
-  boundAngleY: {x: 0, y: 0}
-  boundAngleZ: {x: 0, y: 0}
-  glider: {fileID: 0}
-  speed: 0
-  rotationQuatE: {x: 0, y: 0, z: 0}
 --- !u!1 &821215386
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +529,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1571494404
+--- !u!1 &1405553895
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -542,48 +537,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1571494405}
-  - component: {fileID: 1571494406}
+  - component: {fileID: 1405553896}
+  - component: {fileID: 1405553897}
   m_Layer: 0
-  m_Name: Glider
+  m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1571494405
+--- !u!4 &1405553896
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571494404}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1405553895}
+  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 324099282}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571494406
+  m_Father: {fileID: 527232053}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+--- !u!114 &1405553897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571494404}
+  m_GameObject: {fileID: 1405553895}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64e85cdffdb4ce744af2754733ff8c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundAngleX: {x: 280, y: 350}
-  boundAngleY: {x: -50, y: 50}
-  boundAngleZ: {x: -9999999, y: 9999999}
-  glider: {fileID: 0}
+  boundAngleX: {x: 330, y: 350}
+  windDir: {x: 0, y: 0, z: 1}
+  kite: {fileID: 324099282}
   speed: 20
-  rotationQuatE: {x: 0, y: 0, z: 0}
+  maxHeight: -30
+  maxAngle: 60
+  radius: 0
 --- !u!4 &2062155735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a7b107532ed95744aee34578de7d3f0, type: 3}
