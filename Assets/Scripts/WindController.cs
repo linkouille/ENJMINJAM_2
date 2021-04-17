@@ -49,7 +49,7 @@ public class WindController : MonoBehaviour
 
     public void windEvolution()
     {
-        currentWind.x += Random.Range(0.0f, 10.0f) / 1000;
-        currentWind.y += Random.Range(0.0f, 10.0f) / 1000;
+        currentWind.x += Random.Range(-5.0f, 5.0f) / 1000;
+        currentWind.y += Random.Range(-5.0f, 5.0f) / 1000;
     }
 }
