@@ -11,26 +11,25 @@ public class WindController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentWind = new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f));
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        windEvolution();
     }
 
     private WindController()
     {
-        currentWind = new Vector3(8f, 12f);
-        //setWindToLocalWind();
+
     }
 
     public static WindController getWindController
     {
         get
         {
-            if (_currentWC==null)
+            if (_currentWC == null)
             {
                 lock (instanceLock)
                 {
@@ -47,9 +46,10 @@ public class WindController : MonoBehaviour
         return currentWind;
     }
 
-    /*A IMPLEMENTER POUR QUE LE VENT S'ADAPTE AU NIVEAU
-    public void setWindToLocalWind()
+
+    public void windEvolution()
     {
-        
-    }*/
+        currentWind.x += Random.Range(0.0f, 10.0f) / 1000;
+        currentWind.y += Random.Range(0.0f, 10.0f) / 1000;
+    }
 }

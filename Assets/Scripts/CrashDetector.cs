@@ -16,7 +16,7 @@ public class CrashDetector : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Application.LoadLevel(scene.name);
+            SceneManager.LoadScene(scene.name);
             //game over sound
         }
     }
