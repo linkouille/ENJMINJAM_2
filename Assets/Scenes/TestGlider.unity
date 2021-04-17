@@ -319,7 +319,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e85cdffdb4ce744af2754733ff8c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundAngleX: {x: 0, y: 0}
+  boundAngleY: {x: 0, y: 0}
+  boundAngleZ: {x: 0, y: 0}
+  glider: {fileID: 0}
   speed: 0
+  rotationQuatE: {x: 0, y: 0, z: 0}
 --- !u!1 &821215386
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +403,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821215386}
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 5.09, z: -6.34}
+  m_LocalPosition: {x: 0, y: 8.52, z: -9.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -573,7 +578,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e85cdffdb4ce744af2754733ff8c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundAngleX: {x: 280, y: 350}
+  boundAngleY: {x: -50, y: 50}
+  boundAngleZ: {x: -9999999, y: 9999999}
+  glider: {fileID: 0}
   speed: 20
+  rotationQuatE: {x: 0, y: 0, z: 0}
 --- !u!4 &2062155735 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a7b107532ed95744aee34578de7d3f0, type: 3}
