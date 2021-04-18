@@ -7,7 +7,7 @@ public class CrashDetector : MonoBehaviour
 {
     private Scene scene;
 
-    void Star()
+    void Start()
     {
         scene = SceneManager.GetActiveScene();
     }
