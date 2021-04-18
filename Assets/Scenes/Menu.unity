@@ -911,12 +911,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 415776534}
         m_TargetAssemblyTypeName: MenuHolder, Assembly-CSharp
-        m_MethodName: ActiveUI
-        m_Mode: 5
+        m_MethodName: GoToLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: level
           m_BoolArgument: 0
@@ -2004,7 +2004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1090388680
 MonoBehaviour:
   m_ObjectHideFlags: 0

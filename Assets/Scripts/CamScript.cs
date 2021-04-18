@@ -11,13 +11,12 @@ public class CamScript : MonoBehaviour
 
     public GameObject Camera;
 
-
     private void Update()
     {
         Camera.transform.LookAt(target);
         transform.position = Vector3.Slerp(transform.position, target.position, lerpSpeed);
 
-        transform.Rotate(Vector3.up * Input.GetAxis("Horizontal3") * rotaSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up * -Input.GetAxis("Horizontal3") * rotaSpeed * Time.deltaTime);
     }
 
 }
