@@ -18,7 +18,7 @@ public class GliderMovement : MonoBehaviour
     [SerializeField] private float maxAngle;
 
     private Vector3 rotation;
-    private float acc;
+    public float acc;
 
     private void Awake()
     {
@@ -36,15 +36,16 @@ public class GliderMovement : MonoBehaviour
 
         Debug.DrawRay(transform.position, dirToKiteProj, Color.red);
         Debug.DrawRay(transform.position, windDir, Color.green);
+        windDir = WindController.current.currentWind.normalized;
 
         angleWithWind = Vector3.Angle(dirToKiteProj, windDir);
 
-        acc = Mathf.Clamp((maxAngle - angleWithWind)/maxAngle,0,1);
+        acc = Mathf.Clamp((maxAngle - angleWithWind)/maxAngle,0,0.9f) + 0.1f;
 
-        rotation = input * speed * acc * Time.deltaTime;
+        rotation = input * speed * (acc) * Time.deltaTime;
         transform.rotation = Quaternion.Euler( transform.eulerAngles + rotation);
 
-        Debug.Log((transform.rotation.eulerAngles.x - 360) * acc);
+        /*Debug.Log((transform.rotation.eulerAngles.x - 360) * acc);*/
 
         transform.rotation = Quaternion.Euler((maxHeight) * acc, transform.eulerAngles.y, transform.eulerAngles.z);
 
