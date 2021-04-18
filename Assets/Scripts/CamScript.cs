@@ -19,9 +19,9 @@ public class CamScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        normalizedWind = WindController.current.currentWind.normalized;
-        Vector3 offset = new Vector3(0, 3, 0);
-        transform.position = Vector3.Slerp(transform.position, playerObj.transform.position + normalizedWind * 15 + offset, 0.1f);
+        normalizedWind = -WindController.current.currentWind.normalized;
+        Vector3 offset = new Vector3(0, 4, 0);
+        transform.position = Vector3.Slerp(transform.position, playerObj.transform.position + normalizedWind * 15 + offset, 0.001f);
         transform.LookAt(playerObj.transform.position);
     }
 }
