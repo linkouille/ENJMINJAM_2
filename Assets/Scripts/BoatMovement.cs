@@ -30,7 +30,7 @@ public class BoatMovement : MonoBehaviour
         float accB = Mathf.Clamp((maxAngle - angleWithBoat) / maxAngle, 0, 1f);
 
 
-        rb.velocity = model.forward * speed * (gM.acc - 0.1f) * accB;
+        rb.velocity = Vector3.ProjectOnPlane(model.forward, Vector3.up).normalized * speed * (gM.acc - 0.1f) * accB;
 
     }
 

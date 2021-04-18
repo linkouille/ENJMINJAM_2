@@ -5,23 +5,19 @@ using UnityEngine;
 public class CamScript : MonoBehaviour
 {
 
-    public GameObject playerObj;
-    private WindController _WC;
-    public Vector3 normalizedWind;
-    public Vector3 offset;
+    [SerializeField] private Transform target;
+    public float lerpSpeed;
+    public float rotaSpeed;
 
-    // Start is called before the first frame update
-    void Start()
+    public GameObject Camera;
+
+
+    private void Update()
     {
-        _WC = WindController.current;
+        Camera.transform.LookAt(target);
+        transform.position = Vector3.Slerp(transform.position, target.position, lerpSpeed);
 
+        transform.Rotate(Vector3.up * Input.GetAxis("Horizontal3") * rotaSpeed * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        normalizedWind = WindController.current.currentWind.normalized;
-        transform.position = Vector3.Slerp(transform.position, playerObj.transform.position + normalizedWind * 15 + offset, 0.1f);
-        transform.LookAt(playerObj.transform.position);
-    }
 }
