@@ -7,10 +7,13 @@ public class WindController : MonoBehaviour
     public static WindController current;
     public Vector3 currentWind;
 
-    void Start()
+    void Awake()
     {
         current = this;
-        currentWind = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
+        if(currentWind == Vector3.zero)
+        {
+            currentWind = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
+        }
     }
     void Update()
     {

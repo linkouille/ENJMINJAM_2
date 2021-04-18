@@ -25,6 +25,12 @@ public class GliderMovement : MonoBehaviour
         kite = transform.GetChild(0);
         rotation = transform.eulerAngles;
     }
+    private void Start()
+    {
+        windDir = WindController.current.currentWind.normalized;
+        transform.rotation = Quaternion.LookRotation(new Vector3(windDir.x * Mathf.Cos(maxAngle) - windDir.y * Mathf.Cos(maxAngle), 0,
+            windDir.x * Mathf.Sin(maxAngle) + windDir.y * Mathf.Cos(maxAngle)), Vector3.up);
+    }
 
     private void Update()
     {
@@ -45,7 +51,6 @@ public class GliderMovement : MonoBehaviour
         rotation = input * speed * (acc) * Time.deltaTime;
         transform.rotation = Quaternion.Euler( transform.eulerAngles + rotation);
 
-        /*Debug.Log((transform.rotation.eulerAngles.x - 360) * acc);*/
 
         transform.rotation = Quaternion.Euler((maxHeight) * acc, transform.eulerAngles.y, transform.eulerAngles.z);
 
